@@ -25,9 +25,21 @@ const insertDocuments = function(db, callback) {
     const collection = db.collection('fruits');
     //Inser some documents
     collection.insertMany([
-        {a : 1},
-        {a : 2},
-        {a: 3}
+        {
+            name: "Apple",
+            score: 8,
+            review: "Great fruit"
+        },
+        {
+            name: "Orange",
+            score: 6,
+            review: "Kind of sour"
+        },
+        {
+            name: "Banana",
+            score: 9,
+            review: "Great stuff"
+        }
     ], function(err, result) {
         assert.equal(err, null);
         assert.equal(3, result.result.n);
