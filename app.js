@@ -1,6 +1,21 @@
-const express = require("express");
-const app = express();
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
-app.listen(3000, function(req, res) {
-    console.log("Server started on port 3000");
+// Connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database Name
+const dbName = 'myproject';
+
+//Create a new MongoClient
+const client = new MongoClient(url);
+
+// Use connect method to connect to the Server
+client.connect(function(err) {
+    assert.equal(null, err);
+    console.log("Connected successfully to server");
+
+    const db = client.db(dbName);
+
+    client.close();
 })
