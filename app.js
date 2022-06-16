@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/fruitsDB");
+mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
 
 const insertDocuments = function(db, callback) {
     // Get the documetns collection
