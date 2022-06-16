@@ -4,7 +4,7 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
 
 const fruitSchema = new mongoose.Schema({
     name: String,
-    rating: Number,
+    score: Number,
     review: String
 })
 
@@ -12,7 +12,7 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 const fruit = new Fruit ({
     name: "Apple",
-    rating: 7,
+    score: 7,
     review: "Pretty solid as a fruit"
 })
 
@@ -31,6 +31,22 @@ const person = new Person ({
 })
 
 person.save();
+
+const kiwi = new Fruit({
+    name:"Kiwi",
+    score: 10,
+    review: "The best fruit!"
+})
+const orange = new Fruit({
+    name:"orange",
+    score: 4,
+    review: "Too sour for me"
+})
+const banana = new Fruit({
+    name:"Banana",
+    score: 3,
+    review: "Weird texture"
+})
 
 const findDocuments = function(db, callback) {
     // Get the documents collection
