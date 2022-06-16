@@ -56,14 +56,10 @@ Fruit.insertMany([kiwi, orange, banana], function(err) {
     }
 })
 
-const findDocuments = function(db, callback) {
-    // Get the documents collection
-    const collection = db.collection('fruits');
-    // Find some documents
-    collection.find({}).toArray(function(err, fruits){
-        assert.equal(err, null);
-        console.log("Found the following records");
-        console.log(fruits)
-        callback(fruits);
-    })
-}
+Fruit.find(function(err, fruits) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(fruits);
+    }
+})
