@@ -33,6 +33,14 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model("Person", personSchema);
 
+const pineapple = new Fruit({
+    name: "Pineapple",
+    score: 9,
+    review: "Great fruit."
+})
+
+pineapple.save();
+
 const person = new Person ({
     name: "John",
     age: 37
