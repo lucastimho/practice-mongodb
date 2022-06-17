@@ -42,8 +42,9 @@ const pineapple = new Fruit({
 pineapple.save();
 
 const person = new Person ({
-    name: "John",
-    age: 37
+    name: "Amy",
+    age: 12,
+    favoriteFruit: pineapple
 })
 
 // person.save();
