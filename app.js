@@ -83,4 +83,10 @@ Fruit.updateOne({_id: ""}, {name: "Peach"}, function(err) {
     }
 })
 
-Fruit.deleteOne({name: "Peach"})
+Fruit.deleteOne({name: "Peach"}, function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Successfully deleted the document")
+    }
+})
