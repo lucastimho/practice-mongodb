@@ -82,3 +82,5 @@ Fruit.updateOne({_id: ""}, {name: "Peach"}, function(err) {
         console.log("Successfully upadated the document.")
     }
 })
+
+Fruit.deleteOne({name: "Peach"})
