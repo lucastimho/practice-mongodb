@@ -74,3 +74,11 @@ Fruit.find(function(err, fruits) {
         })
     }
 })
+
+Fruit.updateOne({_id: ""}, {name: "Peach"}, function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Successfully upadated the document.")
+    }
+})
