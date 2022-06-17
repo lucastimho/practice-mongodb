@@ -5,7 +5,7 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
 const fruitSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: [true, "Please check your data entry, no name specified!"]
     },
     score: {
         type: Number,
