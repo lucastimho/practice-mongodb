@@ -4,7 +4,11 @@ mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
 
 const fruitSchema = new mongoose.Schema({
     name: String,
-    score: Number,
+    score: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
     review: String
 })
 
