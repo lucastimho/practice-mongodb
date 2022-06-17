@@ -90,3 +90,11 @@ Fruit.deleteOne({name: "Peach"}, function(err) {
         console.log("Successfully deleted the document")
     }
 })
+
+Person.deleteMany({name: "John"}, function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Successfully deleted all of the document")
+    }
+})
